@@ -8,6 +8,6 @@ class RepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ): Repository {
 
-    override fun getTubeLineStatus(app_id: String, app_key: String): TubeLineStatusResponse =
+    override suspend fun getTubeLineStatus(app_id: String, app_key: String): TubeLineStatusResponse =
         remoteDataSource.getTubeLineStatus(app_id, app_key)
 }

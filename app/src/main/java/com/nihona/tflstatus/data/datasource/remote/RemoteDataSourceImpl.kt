@@ -8,6 +8,6 @@ class RemoteDataSourceImpl @Inject constructor(
     private val apiService: ApiService
 ): RemoteDataSource {
 
-    override fun getTubeLineStatus(app_id: String, app_key: String): TubeLineStatusResponse =
+    override suspend fun getTubeLineStatus(app_id: String, app_key: String): TubeLineStatusResponse =
         apiService.getTubeLineStatus(app_id, app_key)
 }
